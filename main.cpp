@@ -19,7 +19,7 @@
 330186 busra Besli Bilgisayar 2014 ferdi@abc.com 905051234567
 */
 
-//Büşra Keskin - 330186 (2.Öğretim) - 3.Arasınav Zorunlu Ödev
+//BÃ¼Ã¾ra Keskin - 330186 (2.Ã–Ã°retim) - 3.ArasÃ½nav Zorunlu Ã–dev
 #include <iostream>
 #include<fstream>
 #include <stdlib.h> 
@@ -29,7 +29,7 @@
 
 using namespace std;
 
-int randevu_sayisi=0; //randevuların toplam sayısını okurken sayıp güncelliiyoruz
+int randevu_sayisi=0; //randevularÃ½n toplam sayÃ½sÃ½nÃ½ okurken sayÃ½p gÃ¼ncelliiyoruz
 
 class ContactInfo{
   public:
@@ -190,7 +190,7 @@ class Randevu{
   }
   void colision(int i,ifstream &dosya);
 
-  void setAkademisyen(Akademisyen ak){//Randevu dizisine akademisyenleri kopyalıyorum
+  void setAkademisyen(Akademisyen ak){//Randevu dizisine akademisyenleri kopyalÃ½yorum
     akademisyen.setSicil(ak.getSicil());
     akademisyen.setDal(ak.getDal());
     akademisyen.setUnvan(ak.getUnvan());
@@ -203,7 +203,7 @@ class Randevu{
   string getAkademisyen(){
     return akademisyen.getSicil();
   }
-  void setOgrenci(Ogrenci ogr){//Randevu dizisine öğrencileri kopyalıyorum
+  void setOgrenci(Ogrenci ogr){//Randevu dizisine Ã¶Ã°rencileri kopyalÃ½yorum
     ogrenci.setNo(ogr.getNo());
     ogrenci.setAd(ogr.getAd());
     ogrenci.setSoy(ogr.getSoy());
@@ -248,7 +248,7 @@ class Randevu{
   int end_dakika;
 };
 
-void read_a(Akademisyen akademisyen []){//Dosyadan akademisyenleri okuyup diziye atıyorum
+void read_a(Akademisyen akademisyen []){//Dosyadan akademisyenleri okuyup diziye atÃ½yorum
 
   string dosyain = "akademisyen.txt";
 	ifstream dosya;
@@ -271,7 +271,7 @@ void read_a(Akademisyen akademisyen []){//Dosyadan akademisyenleri okuyup diziye
   dosya.close();
 }
 
-void read_o(Ogrenci ogrenci[]){//Dosyadan öğrencileri okuyup diziye atıyorum
+void read_o(Ogrenci ogrenci[]){//Dosyadan Ã¶Ã°rencileri okuyup diziye atÃ½yorum
 
   string no, g_yili, bolum, temp;
   string dosyain = "ogrenci.txt";
@@ -295,7 +295,7 @@ void read_o(Ogrenci ogrenci[]){//Dosyadan öğrencileri okuyup diziye atıyorum
   dosya.close();
 }
 
-void date_and_time_to_int(Randevu r){//Çakışmayı kontrol etmek için int'lere ayırıyorum
+void date_and_time_to_int(Randevu r){//Ã‡akÃ½Ã¾mayÃ½ kontrol etmek iÃ§in int'lere ayÃ½rÃ½yorum
   string t = r.getTarih(); //"12.12.2018";
   string s = r.getBaslangic();//baslangic saati
   string e = r.getBitis();
@@ -312,7 +312,7 @@ void date_and_time_to_int(Randevu r){//Çakışmayı kontrol etmek için int'lere ayı
 
 }
 
-//Dosyadan randevuları okuyup diziye atıyorum
+//Dosyadan randevularÃ½ okuyup diziye atÃ½yorum
 void read_r(Randevu randevu[], Akademisyen ak[], Ogrenci ogr[]){
 
   string dosyain = "randevu.txt";
@@ -322,23 +322,23 @@ void read_r(Randevu randevu[], Akademisyen ak[], Ogrenci ogr[]){
 
   string sicil, no, tarih, baslangic_s, bitis_s;
 
-  for(int i = 0;i<MAX;i++)//randevu dosyasının satırlarını okuyor
+  for(int i = 0;i<MAX;i++)//randevu dosyasÃ½nÃ½n satÃ½rlarÃ½nÃ½ okuyor
   {
     
     if( dosya.eof() ) {randevu_sayisi=i-1; break;}
     dosya>>no>>sicil;
-    for(int var = 0; var<AKADEMISYEN;var++)//sicil nosu aynı olan akadamisyen objesini arıyor
+    for(int var = 0; var<AKADEMISYEN;var++)//sicil nosu aynÃ½ olan akadamisyen objesini arÃ½yor
     {
-      if(!sicil.compare(ak[var].getSicil()))//sicil stringi objenin siciline eşit ise
+      if(!sicil.compare(ak[var].getSicil()))//sicil stringi objenin siciline eÃ¾it ise
         x=var;
         
     }
     if(x==-1)
-      cout<<"-----ERROR akademisyen bulunamadı\n";
+      cout<<"-----ERROR akademisyen bulunamadÃ½\n";
     else
       randevu[i].setAkademisyen(ak[x]);
     
-    for(int var = 0; var<OGRENCI;var++)//öğrenci nosu aynı olan öğrenci objesini arıyor
+    for(int var = 0; var<OGRENCI;var++)//Ã¶Ã°renci nosu aynÃ½ olan Ã¶Ã°renci objesini arÃ½yor
     {
       if(!no.compare(ogr[var].getNo()))
         x=var;
@@ -356,7 +356,7 @@ void read_r(Randevu randevu[], Akademisyen ak[], Ogrenci ogr[]){
     date_and_time_to_int(randevu[temp]);
 }
 
-int Show_a(Akademisyen akademisyen []){//Akademisyenlerin sıra numaralarını ve isimlerini ekranda gösteriyorum
+int Show_a(Akademisyen akademisyen []){//Akademisyenlerin sÃ½ra numaralarÃ½nÃ½ ve isimlerini ekranda gÃ¶steriyorum
   string sicil, ana_dal, unvan;
   int i;
   for( i=0;i<AKADEMISYEN;i++){
@@ -367,7 +367,7 @@ int Show_a(Akademisyen akademisyen []){//Akademisyenlerin sıra numaralarını ve i
   return i-1;
 }
 
-int say_r(Randevu randevu[])//Randevuları ekranda listeliyorum
+int say_r(Randevu randevu[])//RandevularÃ½ ekranda listeliyorum
 {
   int i;
   for( i = 0;i<MAX;i++)
@@ -378,7 +378,7 @@ int say_r(Randevu randevu[])//Randevuları ekranda listeliyorum
   return i;
 }
 
-int Show_r(Randevu randevu[])//Randevuları ekranda listeliyorum
+int Show_r(Randevu randevu[])//RandevularÃ½ ekranda listeliyorum
 {
   int i;
   randevu_sayisi=say_r(randevu);
@@ -398,34 +398,34 @@ int Show_r(Randevu randevu[])//Randevuları ekranda listeliyorum
 
 bool check_time(string start, string end){
   if(atoi(start.substr(0,2).c_str())>atoi(end.substr(0,2).c_str()))return false;
-  //dk kontrolü
+  //dk kontrolÃ¼
   if(atoi(start.substr(3,2).c_str())>atoi(end.substr(3,2).c_str()))return false;
   return true;
 }
 
 bool check_time_string(string time){
-  //saat uzunluğu 5ten farklıysa
+  //saat uzunluÃ°u 5ten farklÃ½ysa
   if(time.length()!=5)return false;
-  //saat gunu kontrolü
+  //saat gunu kontrolÃ¼
   if(23<atoi(time.substr(0,2).c_str())||atoi(time.substr(0,2).c_str())<0)return false;
-  //dk kontrolü
+  //dk kontrolÃ¼
   if(59<atoi(time.substr(3,2).c_str())||atoi(time.substr(3,2).c_str())<0)return false;
   return true;
 }
 
 bool check_tarih_string(string tarih){
-  //tarih uzunluğu 10dan farklıysa
+  //tarih uzunluÃ°u 10dan farklÃ½ysa
   if(tarih.length()!=10)return false;
-  //tarih gunu kontrolü
+  //tarih gunu kontrolÃ¼
   if(31<atoi(tarih.substr(0,2).c_str())||atoi(tarih.substr(0,2).c_str())<1)return false;
-  //ay kontrolü
+  //ay kontrolÃ¼
   if(12<atoi(tarih.substr(3,2).c_str())||atoi(tarih.substr(3,2).c_str())<1)return false;
-  //yıl kontrolü
+  //yÃ½l kontrolÃ¼
   if(2019<atoi(tarih.substr(6,4).c_str())||atoi(tarih.substr(6,4).c_str())<2018)return false;
   return true;
 }
 
-//Çakışma yokmuş gibi kullanılıyor.(yetişmedi)
+//Ã‡akÃ½Ã¾ma yokmuÃ¾ gibi kullanÃ½lÃ½yor.(yetiÃ¾medi)
 bool colision(Akademisyen ak[],Randevu r[],string tarih, string start, string end, int akademisyen_sirasi){
   
   int saat_s, dakika_s, saat_end, dakika_end;
@@ -441,18 +441,18 @@ bool colision(Akademisyen ak[],Randevu r[],string tarih, string start, string en
 
   saat_end=(atoi(end.substr(0,2).c_str()));
   dakika_end=(atoi(end.substr(3,2).c_str()));
-  //hatalı
+  //hatalÃ½
   date_and_time_to_int(r[randevu_sayisi-1]);
 
   for(int i=0; i<randevu_sayisi; i++){
     cout<<"KONTROL"<<endl;
-    //oluşmuş randevular arasında bir çakışma varsa
+    //oluÃ¾muÃ¾ randevular arasÃ½nda bir Ã§akÃ½Ã¾ma varsa
     if(r[i].getSaatStart()>r[i].getSaatEnd())
       return true;
     else if(r[i].getDakikaStart()<r[i].getDakikaEnd()&&r[i].getSaatStart()<=r[i].getSaatEnd())
       return true;
-    //oluşmuş randevuların çakışma kontolü bitti
-    //verilen tarih ve saat çakışma kontrolü başladı
+    //oluÃ¾muÃ¾ randevularÃ½n Ã§akÃ½Ã¾ma kontolÃ¼ bitti
+    //verilen tarih ve saat Ã§akÃ½Ã¾ma kontrolÃ¼ baÃ¾ladÃ½
     cout<<r[i].getYil()<<"if=="<<yil<<endl;
     
     if(r[i].getYil()==yil&&r[i].getGun()==gun&&r[i].getAy()==ay){
@@ -460,13 +460,13 @@ bool colision(Akademisyen ak[],Randevu r[],string tarih, string start, string en
       cout<<"KONTROL 2"<<endl;
       
 
-      //karşılaştırmaya başladı tarihi bulduk
+      //karÃ¾Ã½laÃ¾tÃ½rmaya baÃ¾ladÃ½ tarihi bulduk
       if(r[i].getAkademisyen()==ak[akademisyen_sirasi].getSicil())
       {cout<<"KONTROL 3"<<endl;
-        //akademisyen eşleşti. o hoca o saatte boş mu bakacağız
+        //akademisyen eÃ¾leÃ¾ti. o hoca o saatte boÃ¾ mu bakacaÃ°Ã½z
         if(saat_s<=r[i].getSaatStart()&&saat_end>=r[i].getSaatEnd()){
-          //randevu olan saatler arasındayız
-          //dakikaları kontrol edelim
+          //randevu olan saatler arasÃ½ndayÃ½z
+          //dakikalarÃ½ kontrol edelim
           if(dakika_s<=r[i].getDakikaStart()&&dakika_end>=r[i].getDakikaEnd())
             return true;
         }
@@ -506,7 +506,7 @@ bool randevuyu_sil(Randevu r[], Ogrenci o[],
   string no){
   int  x=-1;
 
-  for(int var = 0; var<OGRENCI;var++)//öğrenci nosu aynı olan öğrenci objesini arıyor
+  for(int var = 0; var<OGRENCI;var++)//Ã¶Ã°renci nosu aynÃ½ olan Ã¶Ã°renci objesini arÃ½yor
   {
     if(!no.compare(r[var].getOgrenci()))
     {
@@ -515,7 +515,7 @@ bool randevuyu_sil(Randevu r[], Ogrenci o[],
     }
   }
   if(x==-1){
-    //bulamadım ogrenciyi
+    //bulamadÃ½m ogrenciyi
     cout<<"seni bulamadik!\n";
     //menu();
     return 0;
@@ -596,13 +596,13 @@ void konsol(Randevu r[],Akademisyen a[], Ogrenci o[]){
 
       r[randevu_sayisi].setAkademisyen(a[i]);
       
-      for(int var = 0; var<OGRENCI;var++)//öğrenci nosu aynı olan öğrenci objesini arıyor
+      for(int var = 0; var<OGRENCI;var++)//Ã¶Ã°renci nosu aynÃ½ olan Ã¶Ã°renci objesini arÃ½yor
       {
         if(!no.compare(o[var].getNo()))
           x=var;
       }
       if(x==-1){
-        //bulamadım ogrenciyi
+        //bulamadÃ½m ogrenciyi
         cout<<"seni bulamadik!\n";
         //menu();
         return;
